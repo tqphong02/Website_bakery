@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  www:
+    build: .
+    environment:
+      MYSQL_HOST: db
+    ports:
+      - "7000:80"
+    volumes:
+      - ./PHP1-main:/var/www/html
+
+  db:
+    image: mysql:latest
+    ports:
+      - "9907:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: asm_php1
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "7001:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: asm_php1

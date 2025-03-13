@@ -1,0 +1,99 @@
+/* Header */
+
+#wrapper {
+    position: relative;
+}
+
+#wrapper header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+    position: relative; /* Thay đổi từ absolute thành relative */
+    text-align: center; /* Căn giữa nội dung của header */
+}
+
+#wrapper header .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header section.logo a img {
+    width: 60%;
+    max-width: 100%; /* Đảm bảo hình ảnh không bị tràn */
+}
+
+#wrapper header .container nav {
+    text-align: left;
+}
+
+#wrapper header .container nav ul {
+    display: flex;
+}
+
+#wrapper header .container nav ul li {
+    padding: 10px;
+    list-style: none;
+}
+
+#wrapper header .container nav ul li a {
+    text-decoration: none;
+    color: rgb(43, 38, 38);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Muli, Futura, Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+#wrapper header .container nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    height: 3px;
+    width: 100%;
+    background-color: #00b14f;
+    display: none;
+}
+
+#wrapper header .container nav ul li a:hover::after {
+    display: block;
+}
+
+/* MENU CON - CHA */
+#wrapper header .container nav ul li.nav-cha {
+    position: relative;
+}
+
+#wrapper header .container nav ul li ul {
+    position: absolute;
+    display: none;
+    flex-flow: column;
+    left: 0;
+    top: 35px;
+    width: 150%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgb(212, 212, 212);
+    z-index: 100;
+    padding: 0;
+    border-radius: 5px;
+}
+
+#wrapper header .container nav ul li ul li {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#wrapper header .container nav ul li ul li a {
+    text-decoration: none;
+    margin: 10px 0;
+    color: black;
+    font-weight: bold;
+}
+
+#wrapper header .container nav ul li.nav-cha:hover ul {
+    display: flex;
+}
